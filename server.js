@@ -18,7 +18,7 @@ app.use("/login", (req, res) => {
 
 app.use("/status", (req, res) => {
   res.send({
-    status: "running on port 8080",
+    status: "auth-api - running on port :8080",
   });
 });
 
