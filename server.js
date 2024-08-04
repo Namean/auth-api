@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT ? process.env.PORT : 8080;
+const IP = process.env.ip ? process.env.ip : "localhost";
 app.use(cors());
 
 // Chrome.error == "Too many redirects"
@@ -23,5 +24,7 @@ app.use("/status", (req, res) => {
 });
 
 app.listen(PORT, () =>
-  console.log(`API is running on http://172.16.150.189:${PORT}/login`)
+  //{ PORT, ip } = process.env;
+  console.log(`API is running on http://${IP}:${PORT}/login`)
+
 );
